@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ObuvModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tovar">
+          <Key>
+            <PropertyRef Name="Id_Tovar" />
+          </Key>
+          <Property Name="Id_Tovar" Type="int" Nullable="false" />
+          <Property Name="Articul" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name_Tovar" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ed_Izmeren" Type="nvarchar" MaxLength="50" />
+          <Property Name="Stoimost" Type="smallint" />
+          <Property Name="Postavshik" Type="nvarchar" MaxLength="50" />
+          <Property Name="Proizvoditel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kategoria_Tovara" Type="nvarchar" MaxLength="50" />
+          <Property Name="Discount" Type="tinyint" />
+          <Property Name="Kol_vo_na_sclade" Type="tinyint" />
+          <Property Name="Opisanie_Tovara" Type="nvarchar" MaxLength="100" />
+          <Property Name="Image" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="Хранилище ObuvModelContainer">
+          <EntitySet Name="Tovar" EntityType="Self.Tovar" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ObuvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tovar">
+          <Key>
+            <PropertyRef Name="Id_Tovar" />
+          </Key>
+          <Property Name="Id_Tovar" Type="Int32" Nullable="false" />
+          <Property Name="Articul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name_Tovar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ed_Izmeren" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Stoimost" Type="Int16" />
+          <Property Name="Postavshik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Proizvoditel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kategoria_Tovara" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discount" Type="Byte" />
+          <Property Name="Kol_vo_na_sclade" Type="Byte" />
+          <Property Name="Opisanie_Tovara" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ObuvEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tovar" EntityType="Self.Tovar" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ObuvModelContainer" CdmEntityContainer="ObuvEntities">
+          <EntitySetMapping Name="Tovar">
+            <EntityTypeMapping TypeName="ObuvModel.Tovar">
+              <MappingFragment StoreEntitySet="Tovar">
+                <ScalarProperty Name="Id_Tovar" ColumnName="Id_Tovar" />
+                <ScalarProperty Name="Articul" ColumnName="Articul" />
+                <ScalarProperty Name="Name_Tovar" ColumnName="Name_Tovar" />
+                <ScalarProperty Name="Ed_Izmeren" ColumnName="Ed_Izmeren" />
+                <ScalarProperty Name="Stoimost" ColumnName="Stoimost" />
+                <ScalarProperty Name="Postavshik" ColumnName="Postavshik" />
+                <ScalarProperty Name="Proizvoditel" ColumnName="Proizvoditel" />
+                <ScalarProperty Name="Kategoria_Tovara" ColumnName="Kategoria_Tovara" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Kol_vo_na_sclade" ColumnName="Kol_vo_na_sclade" />
+                <ScalarProperty Name="Opisanie_Tovara" ColumnName="Opisanie_Tovara" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
